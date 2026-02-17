@@ -1,3 +1,0 @@
-C:/Users/sadhil/OneDrive/Robotics and CV/kinova7d-pick-place-yolov8/build/CMakeFiles/kinova_app.dir
-C:/Users/sadhil/OneDrive/Robotics and CV/kinova7d-pick-place-yolov8/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/sadhil/OneDrive/Robotics and CV/kinova7d-pick-place-yolov8/build/CMakeFiles/ZERO_CHECK.dir
