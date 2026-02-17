@@ -1,9 +1,5 @@
 # tracking_module.py
 
-import os
-import sys
-sys.path.append(os.path.dirname(__file__))
-
 import cv2
 import torch
 from ultralytics import YOLO
@@ -21,8 +17,7 @@ def run_detection(
     camera_index=2,
 ):
     """
-    YOLOv8 detection + pixel → real-world mapping.
-    
+    YOLOv8 detection + pixel → real-world mapping. 
     - Homography maps (x_pixel, y_pixel) → (X_real, Y_real)
     - Bottom-centre of bounding box represents bottle-ground contact point
     - Press 's' to save detections

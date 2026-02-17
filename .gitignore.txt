@@ -1,0 +1,28 @@
+/WorkSpaceEstimation/
+
+# Build files
+/build/
+/CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Visual Studio
+*.vcxproj*
+*.sln
+*.vcxproj.user
+*.pdb
+Debug/
+Release/
+
+# DLLs
+*.dll
+*.exe
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+

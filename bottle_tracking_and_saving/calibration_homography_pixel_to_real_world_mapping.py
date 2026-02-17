@@ -1,7 +1,11 @@
+from pathlib import Path
 import cv2
 import numpy as np
 
-CALIBRATION_OUTPUT_FILE = r"C:\Users\sadhil\OneDrive\Robotics and CV\kinova7d-pick-place-yolov8\homography_calibration_points.txt"
+# Anchor to project root
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+CALIBRATION_OUTPUT_FILE = (PROJECT_ROOT/ "data"/ "homography_calibration_points.txt")
 
 # Live Feed Capture
 def capture_frame(camera_index=0):

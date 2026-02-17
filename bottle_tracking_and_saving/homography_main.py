@@ -1,7 +1,8 @@
 import sys
-import os
+from pathlib import Path
 
-sys.path.append(os.path.dirname(__file__))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(Path(__file__).resolve().parent))
 
 from calibration_homography_pixel_to_real_world_mapping import (
     run_calibration,
@@ -11,27 +12,23 @@ from calibration_homography_pixel_to_real_world_mapping import (
 
 from homography_tracking_module import run_detection
 
-
 # Parameters
 CAMERA_INDEX = 0
 
-MODEL_PATH = r"C:\Users\sadhil\Documents\VS CODE\Machine Learning\ml_env\yolov8n.pt"
-OUTPUT_PATH = r"C:\Users\sadhil\OneDrive\Robotics and CV\kinova7d-pick-place-yolov8\homography_detected_bottle_centers.txt"
-
-FINAL_CALIB_FILE = r"C:\Users\sadhil\OneDrive\Robotics and CV\kinova7d-pick-place-yolov8\homography_calibration_final.txt"
-
+MODEL_PATH = PROJECT_ROOT / "models" / "yolov8n.pt"
+OUTPUT_PATH = PROJECT_ROOT / "data" / "homography_detected_bottle_centers.txt"
+FINAL_CALIB_FILE = PROJECT_ROOT / "data" / "homography_calibration_pixel_to_real.txt"
 TARGET_CLASS_ID = 39   # bottle
 N_CALIB_POINTS = 5
 
-
 # MAIN
 if __name__ == "__main__":
-
+    
     print("\n[INFO] Starting Bottle Detection Pipeline")
     print("-------------------------------------------")
 
     # 1. Calibration
-    if not os.path.exists(FINAL_CALIB_FILE):
+    if not FINAL_CALIB_FILE.exists():
         print("[INFO] No calibration found — running manual calibration.")
 
         H = run_calibration(
