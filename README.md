@@ -105,6 +105,7 @@ pip install -r bottle_tracking_and_saving/Requirements.txt
 
 
 ### 3. Build the C++ Application
+> The homography version does not account for the height of the object, so that needs to be input manually in the "main.cpp" file and then the project must be rebuilt.  
 
 Update the SDK path in `CMakeLists.txt` (if not done already):
 
