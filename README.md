@@ -117,7 +117,7 @@ From the project root directory, run:
 mkdir build
 cd build
 cmake ..
-cmake --build . --config Debug
+cmake --build . --config Release
 ```
 
 
